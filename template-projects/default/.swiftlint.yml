@@ -1,0 +1,40 @@
+# For more information on setting up and configuring SwiftLint, see
+# https://github.com/realm/SwiftLint/blob/master/README.md
+# and https://github.com/realm/SwiftLint/blob/master/Rules.md
+
+disabled_rules: # rule identifiers to exclude from running
+  - switch_case_alignment
+  - function_parameter_count
+  - todo
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - TemplateProjectTests
+  - TemplateProjectUITests
+  - GraphQL-Example/API.swift
+  - vendor
+  - .build
+
+# parameterized rules can be customized from this configuration file
+# parameterized rules are first parameterized as a warning level, then error level.
+
+# Increase maximum line/file length from default
+line_length: 300
+file_length: 550
+
+# Allow trailing whitespace on empty lines (Xcode likes to indent according to
+# adjacent lines by default)
+trailing_whitespace:
+  ignores_empty_lines: true
+
+# Decrease minimum identifier name length from default (allow 2 letter identifier names)
+identifier_name:
+  min_length: 2
+  
+# Complexity of function bodies should be limited.
+cyclomatic_complexity: 15
+
+# Type nesting to two
+nesting:
+  type_level: 2

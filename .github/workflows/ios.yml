@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-12
+    defaults:
+      run:
+        working-directory: ./template-projects/default
+    steps:
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '14.0.1'
+      - uses: actions/checkout@v3
+      - name: Set up ruby env
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          working-directory: ./template-projects/default
+      - uses: extractions/netrc@v1
+        with:
+          machine: github.com
+          username: user
+          password: ${{ secrets.XCODE_BUILD_PAT }}
+      - uses: extractions/netrc@v1
+        with:
+          machine: api.github.com
+          username: user
+          password: ${{ secrets.XCODE_BUILD_PAT }}
+      - name: Build all schemes
+        run: bundle exec fastlane ios build_all

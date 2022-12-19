@@ -1,0 +1,70 @@
+//
+//  LoginViewModel.swift
+//  login
+//
+//  Created by Vargese, Sangeetha on 11/10/22.
+//
+
+import SwiftUI
+
+struct RoundRectTextField: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .textFieldStyle(.plain)
+            .autocapitalization(.none)
+            .padding([.leading, .trailing], 5)
+            .padding([.top, .bottom], 3)
+            .overlay(
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(Color.gray, lineWidth: 1))
+            .padding(.trailing, 20)
+    }
+}
+
+struct LoginButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .buttonStyle(.bordered)
+            .padding([.leading, .trailing], 5)
+            .frame(width: 300, height: 50)
+            .cornerRadius(15.0)
+    }
+}
+
+struct SecureInputView: View {
+    @Binding private var text: String
+    @State private var isSecured: Bool = true
+    private var title: String
+    
+    init(_ title: String, text: Binding<String>) {
+        self.title = title
+        self._text = text
+    }
+    
+    var body: some View {
+        ZStack(alignment: .trailing) {
+            Group {
+                if isSecured {
+                    SecureField(title, text: $text)
+                } else {
+                    TextField(title, text: $text)
+                }
+            }.padding(.trailing, 32)
+            
+            Button(action: {
+                isSecured.toggle()}, label: {
+                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                .accentColor(.gray)})
+        }
+    }
+}
+
+struct ErrorText: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.callout)
+            .foregroundColor(Color.red)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}

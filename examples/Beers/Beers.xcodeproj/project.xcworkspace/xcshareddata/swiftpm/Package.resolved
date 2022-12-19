@@ -1,0 +1,77 @@
+{
+  "pins" : [
+    {
+      "identity" : "apple-analyticskit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Deloitte/Apple-AnalyticsKit",
+      "state" : {
+        "revision" : "c892b5938c15f01fc6abbd6cedc94cdfe23f5650",
+        "version" : "0.3.0"
+      }
+    },
+    {
+      "identity" : "cleanse",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/square/Cleanse",
+      "state" : {
+        "revision" : "c854787f83d99527587b5387f04ccd0030e6133a",
+        "version" : "4.2.6"
+      }
+    },
+    {
+      "identity" : "cwlcatchexception",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattgallagher/CwlCatchException.git",
+      "state" : {
+        "revision" : "35f9e770f54ce62dd8526470f14c6e137cef3eea",
+        "version" : "2.1.1"
+      }
+    },
+    {
+      "identity" : "cwlpreconditiontesting",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattgallagher/CwlPreconditionTesting.git",
+      "state" : {
+        "revision" : "c21f7bab5ca8eee0a9998bbd17ca1d0eb45d4688",
+        "version" : "2.1.0"
+      }
+    },
+    {
+      "identity" : "ios-urlnetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Deloitte/iOS-URLNetwork.git",
+      "state" : {
+        "revision" : "186e1b09b631ff9e7b7c65e1947f3ec4a317e5c0",
+        "version" : "0.5.0"
+      }
+    },
+    {
+      "identity" : "ios-utilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Deloitte/iOS-Utilities.git",
+      "state" : {
+        "revision" : "6caecdeb53e84328edbc51195e4f382eebf510fa",
+        "version" : "0.1.6"
+      }
+    },
+    {
+      "identity" : "nimble",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Quick/Nimble",
+      "state" : {
+        "revision" : "c93f16c25af5770f0d3e6af27c9634640946b068",
+        "version" : "9.2.1"
+      }
+    },
+    {
+      "identity" : "quick",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Quick/Quick",
+      "state" : {
+        "revision" : "f9d519828bb03dfc8125467d8f7b93131951124c",
+        "version" : "5.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

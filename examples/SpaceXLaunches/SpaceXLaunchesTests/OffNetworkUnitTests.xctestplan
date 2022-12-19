@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "C76565AB-96DE-4835-B4ED-A3AC0CDF4172",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SpaceXLaunches.xcodeproj",
+        "identifier" : "97F433E2272718860015324B",
+        "name" : "SpaceXLaunchesTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SpaceXLaunches.xcodeproj",
+        "identifier" : "97F433EC272718860015324B",
+        "name" : "SpaceXLaunchesUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

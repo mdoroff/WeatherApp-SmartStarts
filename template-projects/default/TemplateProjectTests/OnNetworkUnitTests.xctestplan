@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "AF2B3D12-D0FD-4154-BD92-E6187CB344D5",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "selectedTests" : [
+
+      ],
+      "target" : {
+        "containerPath" : "container:TemplateProject.xcodeproj",
+        "identifier" : "97F433E2272718860015324B",
+        "name" : "TemplateProjectTests"
+      }
+    }
+  ],
+  "version" : 1
+}

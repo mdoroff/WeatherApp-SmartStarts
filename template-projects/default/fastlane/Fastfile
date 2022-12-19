@@ -1,0 +1,68 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    # sometimes the build fails for taking to long on xcodebuild -showBuildSettings - attempting to fix
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+    ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "120"
+  end
+  desc "Build and test all targets"
+  lane :build_all do
+    lint
+    build_scheme scheme:"Template"
+  end
+
+#  desc "Runs test scehemes"
+#  lane :test_all do
+#    lint
+#    test_app scheme:"XCUITests-GraphQL-Example"
+#  end
+
+  desc "Builds the app for a given scheme"
+  lane :build_scheme do |options|
+    gym(
+      use_system_scm: true,
+      project: "TemplateProject.xcodeproj",
+      scheme: options[:scheme],
+      skip_package_ipa: true,
+      skip_archive: true,
+      skip_profile_detection: true,
+      destination: "generic/platform=iOS Simulator"
+    )
+  end
+  
+  lane :test_app do |options|
+    scan(
+      project: "TemplateProject.xcodeproj",
+      scheme: options[:scheme],
+      clean: true
+    )
+  end
+  
+  desc "Runs unit tests"
+  lane :lint do
+    swiftlint
+  end
+  lane :beta do
+  
+  end
+  
+  lane :release do
+  
+  end
+end

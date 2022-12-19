@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "C76565AB-96DE-4835-B4ED-A3AC0CDF4172",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TemplateProject.xcodeproj",
+        "identifier" : "97F433E2272718860015324B",
+        "name" : "TemplateProjectTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:TemplateProject.xcodeproj",
+        "identifier" : "97F433EC272718860015324B",
+        "name" : "TemplateProjectUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
